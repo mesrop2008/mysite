@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Главная - Шашлыки</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="antialiased text-gray-900">
+  {% extends "layout.html" %}
+  {% block content %}
+
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-r from-orange-600 via-red-600 to-orange-700 text-white py-20 overflow-hidden">
+    <div class="absolute inset-0 bg-black/20"></div>
+    <div class="relative max-w-7xl mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6">
+        Настоящие шашлыки
+        <span class="block text-orange-200">как в Армении</span>
+      </h1>
+      <p class="text-xl md:text-2xl mb-8 text-orange-100 max-w-3xl mx-auto">
+        Готовим на настоящих углях из отборного мяса по традиционным рецептам.
+        Доставим горячими прямо к вашему столу!
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="{% url 'menu' %}"
+          class="bg-white text-orange-600 hover:bg-orange-50 font-semibold px-8 py-4 text-lg rounded-md flex items-center justify-center">
+          Посмотреть меню
+          <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+        <a href="tel:+74951234567"
+          class="border border-white text-white hover:bg-white/10 font-semibold px-8 py-4 text-lg rounded-md text-center">
+          Позвонить: +7 (952) 620-60-60
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div>
+          <div
+            class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-orange-100 to-red-100 text-orange-600 rounded-full mb-4">
+            ⏱
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Быстрая доставка</h3>
+          <p class="text-gray-600">Доставим горячие шашлыки за 40 минут</p>
+        </div>
+        <div>
+          <div
+            class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-orange-100 to-red-100 text-orange-600 rounded-full mb-4">
+            🏆
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Качество премиум</h3>
+          <p class="text-gray-600">Только свежее мясо высшего сорта</p>
+        </div>
+        <div>
+          <div
+            class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-orange-100 to-red-100 text-orange-600 rounded-full mb-4">
+            🚚
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Бесплатная доставка</h3>
+          <p class="text-gray-600">При заказе от 3500 рублей</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-gradient-to-r from-orange-600 to-red-600 text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Готовы сделать заказ?</h2>
+      <p class="text-xl mb-8 text-orange-100">
+        Закажите сейчас и горячие шашлыки будут у вас через 40 минут.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="{% url 'menu' %}"
+          class="bg-white text-orange-600 hover:bg-orange-50 font-semibold px-8 py-4 text-lg rounded-md">Выбрать
+          шашлыки</a>
+        <a href="{% url 'contacts' %}"
+          class="border border-white text-white hover:bg-white/10 font-semibold px-8 py-4 text-lg rounded-md">Связаться
+          с нами</a>
+      </div>
+    </div>
+  </section>
+
+  {% endblock %}
+
+</body>
+
+</html>

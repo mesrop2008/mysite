@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    {% extends "layout.html" %}
+    {% block content %}
+    <div class="max-w-6xl mx-auto px-4 py-12">
+        <!-- Заголовок -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-900 mb-4">Контакты</h1>
+            <p class="text-xl text-gray-600">Мы всегда рады помочь и ответить на ваши вопросы</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Контактная информация -->
+            <div class="space-y-6">
+                <!-- Основная информация -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-lg font-semibold text-gray-900 mb-6">Основная информация</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="flex items-start gap-4">
+                            <div class="p-3 bg-orange-100 text-orange-600 rounded-lg">📞</div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900 mb-1">Телефон</h3>
+                                <p class="font-medium text-gray-800">+7 (952) 620-60-60</p>
+                                <p class="text-sm text-gray-600">C 10:00 до 22:30 заказов</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="p-3 bg-orange-100 text-orange-600 rounded-lg">📧</div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900 mb-1">Email</h3>
+                                <p class="font-medium text-gray-800">Anulmilik@mail.ru</p>
+                                <p class="text-sm text-gray-600">Ответим в течение часа</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="p-3 bg-orange-100 text-orange-600 rounded-lg">📍</div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900 mb-1">Адрес</h3>
+                                <p class="font-medium text-gray-800">Иркутск, ул. Главная Кировская, СНТ Сибирь 32</p>
+                                <p class="text-sm text-gray-600">Центральный офис и кухня</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="p-3 bg-orange-100 text-orange-600 rounded-lg">⏰</div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900 mb-1">Режим работы</h3>
+                                <p class="font-medium text-gray-800">Ежедневно с 10:00 до 22:30</p>
+                                <p class="text-sm text-gray-600">Доставка до 22:30</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- Карта и FAQ -->
+            <div class="space-y-6">
+                <!-- Карта -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <div class="bg-gray-100 rounded-lg h-64 flex items-center justify-center mb-4">
+                        <div class="text-center">
+                            <div style="width:540px;height:300px;overflow:hidden;position:relative;"><iframe
+                                    style="width:100%;height:100%;border:1px solid #e6e6e6;border-radius:8px;box-sizing:border-box"
+                                    src="https://yandex.ru/maps-reviews-widget/168755676360?comments"></iframe><a
+                                    href="https://yandex.ru/maps/org/shashlyk_market/168755676360/" target="_blank"
+                                    style="box-sizing:border-box;text-decoration:none;color:#b3b3b3;font-size:10px;font-family:YS Text,sans-serif;padding:0 20px;position:absolute;bottom:8px;width:100%;text-align:center;left:0;overflow:hidden;text-overflow:ellipsis;display:block;max-height:14px;white-space:nowrap;padding:0 16px;box-sizing:border-box">Шашлык-Market
+                                    на карте Иркутска — Яндекс Карты</a></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    {% endblock %}
+</body>
+
+</html>

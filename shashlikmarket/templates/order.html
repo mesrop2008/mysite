@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  {% extends "layout.html" %}
+  {% block content %}
+  <div class="max-w-4xl mx-auto px-4 py-12">
+    <h1 class="text-3xl font-bold text-gray-900 mb-8">Мои заказы</h1>
+
+    <!-- Если заказов нет -->
+    <div class="text-center">
+      <div class="text-8xl mb-6">📋</div>
+      <h1 class="text-3xl font-bold text-gray-900 mb-4">У вас пока нет заказов</h1>
+      <p class="text-xl text-gray-600">Сделайте свой первый заказ прямо сейчас!</p>
+    </div>
+    {% endblock %}
+</body>
+
+</html>

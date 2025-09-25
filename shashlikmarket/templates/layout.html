@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Шашлык Маркет{% endblock %}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-orange-50 to-red-50 flex flex-col antialiased text-gray-900">
+
+  <!-- Header -->
+  <header class="bg-white shadow-lg border-b-2 border-orange-200">
+
+    <!-- Top Bar -->
+    <div class="bg-gradient-to-r from-orange-600 to-red-600 text-white py-3">
+      <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+
+        <!-- Banner -->
+        <div class="flex items-center gap-3">
+          <div class="bg-white/20 p-2 rounded-full">🔥</div>
+          <div class="text-center md:text-left">
+            <p class="font-bold text-lg">🔥 Горячие шашлыки каждый день!</p>
+            <p class="text-sm text-orange-100">Работаем ежедневно 10:00-22:30</p>
+          </div>
+        </div>
+
+        <!-- Contacts -->
+        <div class="flex flex-col md:flex-row items-center gap-4 text-sm">
+          <div class="flex items-center gap-2">📞 <span class="font-semibold">+7 (952) 620-60-60 &nbsp </span></div>
+          <div class="flex items-center gap-2">📍 <span>Иркутск, ул. Главная Кировская,
+              СНТ Сибирь 32</span></div>
+          <div class="flex items-center gap-2">✉️ <span>Anulmilik@mail.ru</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex items-center justify-between py-4">
+
+          <!-- Logo -->
+          <a href="{% url 'home' %}" class="flex items-center gap-3">
+            <div
+              class="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center text-white text-xl">
+              🔥</div>
+            <div>
+              <h1 class="text-2xl font-bold text-gray-900">Шашлык Маркет</h1>
+              <p class="text-sm text-gray-500">Лучшие шашлыки в городе</p>
+            </div>
+          </a>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden lg:flex items-center space-x-1">
+            <a href="{% url 'home' %}"
+              class="px-4 py-2 rounded-lg font-medium {% if request.resolver_match.url_name == 'home' %}text-orange-600 bg-orange-100 shadow-sm{% else %}text-gray-700 hover:bg-gray-100{% endif %}">Главная</a>
+            <a href="{% url 'menu' %}"
+              class="px-4 py-2 rounded-lg font-medium {% if request.resolver_match.url_name == 'menu' %}text-orange-600 bg-orange-100 shadow-sm{% else %}text-gray-700 hover:bg-gray-100{% endif %}">Меню</a>
+            <a href="{% url 'cart' %}"
+              class="px-4 py-2 rounded-lg font-medium {% if request.resolver_match.url_name == 'cart' %}text-orange-600 bg-orange-100 shadow-sm{% else %}text-gray-700 hover:bg-gray-100{% endif %}">Корзина</a>
+            <a href="{% url 'orders' %}"
+              class="px-4 py-2 rounded-lg font-medium {% if request.resolver_match.url_name == 'orders' %}text-orange-600 bg-orange-100 shadow-sm{% else %}text-gray-700 hover:bg-gray-100{% endif %}">Мои
+              заказы</a>
+            <a href="{% url 'delivery' %}"
+              class="px-4 py-2 rounded-lg font-medium {% if request.resolver_match.url_name == 'delivery' %}text-orange-600 bg-orange-100 shadow-sm{% else %}text-gray-700 hover:bg-gray-100{% endif %}">Доставка и оплата</a>
+            <a href="{% url 'contacts' %}"
+              class="px-4 py-2 rounded-lg font-medium {% if request.resolver_match.url_name == 'contacts' %}text-orange-600 bg-orange-100 shadow-sm{% else %}text-gray-700 hover:bg-gray-100{% endif %}">Контакты</a>
+           
+          </div>
+
+          <!-- Cart Icon (Mobile) -->
+          <a href="{% url 'cart' %}" class="lg:hidden relative">
+            <div class="p-2 rounded-full bg-orange-100 text-orange-600 text-lg">🛒</div>
+            
+          </a>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div class="lg:hidden border-t border-gray-200 py-3 overflow-x-auto">
+          <div class="flex space-x-6 min-w-max text-sm font-medium">
+            <a href="{% url 'home' %}"
+              class="px-3 py-1 rounded-full {% if request.resolver_match.url_name == 'home' %}bg-orange-100 text-orange-600{% else %}text-gray-700 hover:bg-gray-100{% endif %}">Главная</a>
+            <a href="{% url 'menu' %}"
+              class="px-3 py-1 rounded-full {% if request.resolver_match.url_name == 'menu' %}bg-orange-100 text-orange-600{% else %}text-gray-700 hover:bg-gray-100{% endif %}">Меню</a>
+            <a href="{% url 'cart' %}"
+              class="px-3 py-1 rounded-full {% if request.resolver_match.url_name == 'cart' %}bg-orange-100 text-orange-600{% else %}text-gray-700 hover:bg-gray-100{% endif %}">Корзина</a>
+            <a href="{% url 'orders' %}"
+              class="px-3 py-1 rounded-full {% if request.resolver_match.url_name == 'orders' %}bg-orange-100 text-orange-600{% else %}text-gray-700 hover:bg-gray-100{% endif %}">Мои
+              заказы</a>
+            <a href="{% url 'delivery' %}"
+              class="px-3 py-1 rounded-full {% if request.resolver_match.url_name == 'delivery' %}bg-orange-100 text-orange-600{% else %}text-gray-700 hover:bg-gray-100{% endif %}">Доставка и оплата</a>
+            <a href="{% url 'contacts' %}"
+              class="px-3 py-1 rounded-full {% if request.resolver_match.url_name == 'contacts' %}bg-orange-100 text-orange-600{% else %}text-gray-700 hover:bg-gray-100{% endif %}">Контакты</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-1">
+    {% block content %}
+    <!-- Здесь будет контент страницы -->
+    {% endblock %}
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white mt-16">
+    <div class="max-w-7xl mx-auto px-4 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+        <!-- Logo + About -->
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div
+              class="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center text-white">
+              🔥</div>
+            <h3 class="text-xl font-bold">Шашлык Маркет</h3>
+          </div>
+          <p class="text-gray-400">
+            Лучшие шашлыки в Иркутске с доставкой на дом. Готовим только из свежего мяса на настоящих углях.
+          </p>
+        </div>
+
+        <!-- Menu -->
+        <div>
+          <h4 class="font-semibold mb-4 text-orange-400">Меню</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="{% url 'menu' %}">Шашлыки</a></li>
+            <li><a href="{% url 'menu' %}">Сеты</a></li>
+            <li><a href="{% url 'menu' %}">Салаты</a></li>
+            <li><a href="{% url 'menu' %}">Напитки</a></li>
+          </ul>
+        </div>
+
+        <!-- Info -->
+        <div>
+          <h4 class="font-semibold mb-4 text-orange-400">Информация</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="{% url 'delivery' %}">Доставка и оплата</a></li>
+            <li><a href="{% url 'contacts' %}">Контакты</a></li>
+            <li><a href="#">Акции</a></li>
+          </ul>
+        </div>
+
+        <!-- Contacts -->
+        <div>
+          <h4 class="font-semibold mb-4 text-orange-400">Контакты</h4>
+          <div class="space-y-2 text-gray-400">
+            <p>📞 +7 (952) 620-60-60</p>
+            <p>✉️ Anulmilik@mail.ru </p>
+            <p>📍 ул. Главная Кировская,
+              СНТ Сибирь 32</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+        <p>&copy; 2024 Шашлык Маркет. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
